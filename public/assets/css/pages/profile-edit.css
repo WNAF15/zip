@@ -1,0 +1,140 @@
+/* ===== РЕДАКТИРОВАНИЕ ПРОФИЛЯ ===== */
+.profile-edit-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.profile-edit-card {
+    padding: 30px 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+
+.profile-edit-card h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+/* ===== ФОРМА ===== */
+.profile-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: var(--input-bg);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--nav-active);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ===== АВАТАР ===== */
+.avatar-upload {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.current-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--avatar-border);
+}
+
+.avatar-upload input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--nav-hover);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.upload-btn:hover {
+    background: var(--nav-hover);
+    opacity: 0.8;
+}
+
+/* ===== КНОПКА СОХРАНЕНИЯ ===== */
+.save-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: var(--nav-active);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 8px;
+}
+
+.save-btn:hover {
+    opacity: 0.9;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 480px) {
+    .profile-edit-card {
+        padding: 20px;
+    }
+    .avatar-upload {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,67 @@
+/* ===== ТЁМНАЯ ТЕМА (ЗВЁЗДНОЕ НЕБО) ===== */
+:root {
+    --header-bg: #141b2d;
+    --header-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    --text-primary: #e8e8f0;
+    --text-secondary: #8888aa;
+    --nav-bg: rgba(255, 255, 255, 0.05);
+    --nav-hover: rgba(255, 255, 255, 0.08);
+    --dropdown-bg: #1a2236;
+    --avatar-border: #2a3250;
+    --underline-color: #6c63ff;
+    --card-bg: #1a2236;
+    --card-border: rgba(255, 255, 255, 0.06);
+    --friend-bg: rgba(255, 255, 255, 0.04);
+    --activity-bg: rgba(255, 255, 255, 0.03);
+    --input-bg: rgba(255, 255, 255, 0.06);
+}
+
+body {
+    background: #0a0e1a;
+    color: #e8e8f0;
+}
+
+.sakura-container {
+    display: none;
+}
+
+.stars-container {
+    display: block;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+    25% { opacity: 0.8; transform: translate(10px, -15px) scale(1.2); }
+    50% { opacity: 0.3; transform: translate(-5px, -30px) scale(0.8); }
+    75% { opacity: 0.9; transform: translate(15px, -45px) scale(1.1); }
+    100% { opacity: 0; transform: translate(0px, -60px) scale(0.5); }
+}
+
+.avatar-menu {
+    border-color: rgba(255,255,255,0.06);
+}
+
+.avatar-menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.menu-divider {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar-menu-item.logout-item:hover {
+    background: rgba(231, 76, 60, 0.12);
+}
+
+.nav-link::after,
+.dropbtn::after {
+    background: #6c63ff;
+}

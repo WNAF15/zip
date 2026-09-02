@@ -1,0 +1,134 @@
+/* ===== СТРАНИЦА ДРУЗЕЙ ===== */
+.friends-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.friends-header {
+    margin-bottom: 30px;
+}
+
+.friends-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.friends-subtitle {
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin: 4px 0 0;
+}
+
+.friends-section {
+    margin-bottom: 40px;
+}
+
+.friends-section .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.friend-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.friend-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.friend-card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--avatar-border);
+    margin-bottom: 12px;
+}
+
+.friend-card-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.friend-card-status {
+    font-size: 0.8rem;
+    padding: 2px 12px;
+    border-radius: 12px;
+    margin: 4px 0 10px;
+}
+
+.friend-card-status.online {
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.12);
+}
+
+.friend-card-status.away {
+    color: #ff9800;
+    background: rgba(255, 152, 0, 0.12);
+}
+
+.friend-card-status.offline {
+    color: #9e9e9e;
+    background: rgba(158, 158, 158, 0.12);
+}
+
+.friend-card-btn {
+    padding: 6px 20px;
+    border-radius: 20px;
+    background: var(--nav-hover);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.friend-card-btn:hover {
+    background: var(--nav-hover);
+    opacity: 0.7;
+}
+
+.friends-empty {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-size: 1.1rem;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 640px) {
+    .friends-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .friend-card {
+        padding: 16px 12px;
+    }
+    .friend-card-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}
+.friends-header{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.friends-kicker{display:block;font-size:.68rem;letter-spacing:.16em;color:var(--nav-active);font-weight:700;margin-bottom:5px}.friends-summary{min-width:130px;padding:13px 16px;border-radius:16px;background:rgba(108,99,255,.1);text-align:center}.friends-summary strong,.friends-summary span{display:block}.friends-summary strong{font-size:1.35rem;color:var(--text-primary)}.friends-summary span{font-size:.75rem;color:var(--text-secondary)}
+.friends-toolbar{margin:0 0 25px}.friends-toolbar input{width:100%;box-sizing:border-box;padding:13px 15px;border-radius:14px;border:1px solid var(--card-border);background:var(--card-bg);color:var(--text-primary);outline:none}.friend-card{position:relative;text-decoration:none;color:inherit}.friend-card-info{display:flex;flex-direction:column;align-items:center}.friend-card-status.playing{color:var(--nav-active);background:rgba(108,99,255,.12)}.friend-card-arrow{margin-top:auto;padding-top:5px;color:var(--nav-active);opacity:.7}

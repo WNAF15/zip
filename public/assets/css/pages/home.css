@@ -1,0 +1,324 @@
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+.welcome {
+    text-align: center;
+    padding: 20px 0 30px;
+}
+
+.welcome h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.welcome .highlight {
+    font-weight: 700;
+    background: linear-gradient(135deg, #e8a89e, #d4867a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.home-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px 28px;
+    border: 1px solid var(--card-border);
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+}
+
+/* Друзья */
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.friend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px 8px 8px;
+    border-radius: 30px;
+    background: var(--friend-bg);
+}
+
+.friend-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--avatar-border);
+}
+
+.friend-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.friend-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--header-bg);
+    flex-shrink: 0;
+}
+
+.friend-status.online { background: #4caf50; }
+.friend-status.offline { background: #9e9e9e; }
+
+.empty-message {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding: 20px 0;
+}
+
+/* Активность */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: var(--activity-bg);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.activity-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+.activity-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.activity-text .game-name {
+    color: var(--nav-active);
+    font-weight: 500;
+}
+
+.activity-time {
+    margin-left: auto;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* Топ-3 */
+.top-games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-game-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--activity-bg);
+}
+
+.top-game-rank {
+    font-weight: 700;
+    width: 28px;
+    text-align: center;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.top-game-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.top-game-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+/* События */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--activity-bg);
+    flex-wrap: wrap;
+}
+
+.event-date {
+    font-weight: 600;
+    color: var(--nav-active);
+    font-size: 0.85rem;
+    min-width: 100px;
+}
+
+.event-name {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.event-attendees {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+/* Чат */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.chat-message {
+    display: flex;
+    gap: 12px;
+    padding: 6px 0;
+    align-items: flex-start;
+}
+
+.chat-avatar {
+    font-size: 1.2rem;
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+}
+
+.chat-user {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.chat-text {
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.chat-time {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+.chat-link {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--nav-active);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-link:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 820px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .home-card {
+        padding: 20px;
+    }
+    .friends-list {
+        gap: 10px;
+    }
+    .friend-item {
+        padding: 6px 12px 6px 6px;
+    }
+    .friend-avatar {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome h1 {
+        font-size: 2rem;
+    }
+    .activity-item {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .activity-time {
+        margin-left: 36px;
+    }
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .event-date {
+        min-width: auto;
+    }
+    .chat-message {
+        gap: 8px;
+    }
+}
+.home-kicker,.card-kicker{display:block;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--nav-active);font-weight:700;margin-bottom:4px}
+.home-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mini-count{min-width:28px;height:28px;display:grid;place-items:center;border-radius:10px;background:rgba(108,99,255,.12);color:var(--nav-active);font-size:.78rem;font-weight:700}
+.home-card-link{color:var(--nav-active);text-decoration:none;font-size:.82rem}
+.friend-item{text-decoration:none;transition:transform .18s ease,background .18s ease}.friend-item:hover{transform:translateY(-1px)}
+.friend-status.away{background:#f0ad4e}.friend-status.playing{background:#6c63ff}

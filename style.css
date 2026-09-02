@@ -1,0 +1,190 @@
+/* ============================================================
+   СТИЛИ ИГРЫ "КРУГ АДА" (ОБЁРНУТЫ В #game-root)
+   ============================================================ */
+
+#game-root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #2d1b0e;
+    overflow: hidden;
+}
+
+#game-root #game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #2d1b0e;
+}
+
+/* ============================================================
+   HUD (информация поверх игры)
+   ============================================================ */
+
+#game-root .game-hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: monospace;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 16px;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 10;
+    user-select: none;
+}
+
+#game-root .game-hud span {
+    display: block;
+    margin: 2px 0;
+}
+
+#game-root .game-hud .highlight {
+    color: #FF6B35;
+    font-weight: bold;
+}
+
+/* ============================================================
+   ПОДСКАЗКА (внизу экрана)
+   ============================================================ */
+
+#game-root .game-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 20px;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 10;
+    user-select: none;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+#game-root .game-hint kbd {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+    font-size: 12px;
+    color: #FF6B35;
+}
+
+/* ============================================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ
+   ============================================================ */
+
+@media (max-width: 768px) {
+    #game-root .game-hint {
+        font-size: 10px;
+        padding: 6px 12px;
+        white-space: normal;
+        max-width: 90%;
+        text-align: center;
+    }
+    
+    #game-root .game-hud {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* ============================================================
+   АНИМАЦИЯ ЗАГРУЗКИ (если используется)
+   ============================================================ */
+
+#game-root .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FF6B35;
+    font-size: 24px;
+    font-family: monospace;
+    z-index: 5;
+    text-align: center;
+}
+
+#game-root .loading .spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 107, 53, 0.2);
+    border-top: 4px solid #FF6B35;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}@import url('./styles/character-creation.css');
+
+
+/* Character/menu UI */
+#game-root,.game-shell{position:relative;overflow:hidden}.character-creation-screen{position:absolute;inset:0;z-index:3000;box-sizing:border-box;padding:clamp(18px,3vw,42px);background:radial-gradient(circle at 50% 45%,#291815 0,#120b0a 52%,#070505 100%);color:#ead9c4;font-family:Georgia,serif;display:flex;flex-direction:column}.creation-header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.creation-header h1{margin:3px 0;font-size:clamp(28px,4vw,54px)}.creation-header p{opacity:.6}.eyebrow,.panel-label{letter-spacing:.2em;color:#bf9d72;font-size:11px}.creation-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(180px,1fr) minmax(320px,1.7fr) minmax(220px,1fr);gap:24px;align-items:center}.creation-panel{background:rgba(255,255,255,.035);border:1px solid rgba(220,190,150,.14);padding:18px;min-height:330px;box-sizing:border-box}.creation-panel h2{margin-top:0}.class-list{display:grid;gap:10px}.class-card,.ability-item,.totem-card,.start-game{font:inherit;color:#ead9c4;background:rgba(0,0,0,.25);border:1px solid rgba(234,217,196,.18);padding:13px;text-align:left;cursor:pointer}.class-card.active{border-color:#caa069;box-shadow:0 0 20px rgba(202,160,105,.15)}.totem{margin-top:34px}.totem-card{margin-top:10px;display:flex;gap:12px;align-items:center;width:100%;font-size:18px}.totem-card span{font-size:34px}.creation-center{text-align:center}.character-core{position:relative;width:min(64vw,640px);aspect-ratio:1;margin:auto;display:grid;place-items:center}.polar-chart{position:absolute;inset:0;margin:auto}.character-preview{width:30%;aspect-ratio:.72;z-index:2;border-radius:45% 45% 35% 35%;display:grid;place-items:center;font-size:clamp(80px,12vw,160px);background:radial-gradient(circle,#d8b28a,#5c3528 65%,#1c0d0d);box-shadow:0 0 55px rgba(190,100,60,.25)}.selection-name p{max-width:560px;margin:auto;opacity:.72}.ability-scroll{max-height:430px;overflow:auto;padding-right:8px}.ability-scroll h3{font-size:12px;letter-spacing:.16em;color:#bf9d72;margin:20px 0 8px}.ability-item{display:block;width:100%;margin-bottom:7px}.creation-footer{text-align:center;padding-top:14px}.start-game{padding:15px 45px;text-align:center;border-color:#caa069;background:#24130f}.creation-tooltip{position:absolute;z-index:20;max-width:260px;background:#100b0a;border:1px solid #8c6a4b;padding:12px;box-shadow:0 10px 30px #000}.creation-tooltip span{display:block;font-size:13px;line-height:1.4;margin-top:6px;opacity:.8}@media(max-width:850px){.creation-layout{grid-template-columns:1fr;overflow:auto}.creation-panel{min-height:auto}.character-core{width:min(92vw,520px)}.creation-header{display:block}}
+
+.main-menu-screen,.character-select-screen{position:absolute;inset:0;z-index:3000;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,#2d1b16,#100a09 60%,#050404);color:#ead9c4;font-family:Georgia,serif;padding:20px;box-sizing:border-box}
+.menu-card,.select-card{width:min(480px,92vw);padding:clamp(28px,5vw,54px);box-sizing:border-box;border:1px solid rgba(202,160,105,.28);background:rgba(18,10,9,.82);box-shadow:0 25px 80px rgba(0,0,0,.55);text-align:center}
+.menu-card h1,.select-card h1{font-size:clamp(38px,6vw,68px);margin:10px 0 28px}.menu-user{opacity:.75}.menu-action{display:block;width:100%;margin:12px 0;padding:17px 22px;border:1px solid rgba(202,160,105,.38);background:#25130f;color:#ead9c4;font:inherit;font-size:18px;cursor:pointer}.menu-action:hover{background:#3a1f17}.menu-action.secondary{background:transparent}.menu-action small{opacity:.55;margin-left:8px}.menu-note{font-size:13px;line-height:1.5;opacity:.55;margin-top:24px}.menu-modal{position:absolute;inset:0;background:rgba(0,0,0,.68);display:grid;place-items:center}.menu-modal>div{padding:28px 45px;background:#160e0c;border:1px solid #8c6a4b;text-align:center}.menu-modal button{padding:10px 25px;background:#24130f;color:#ead9c4;border:1px solid #8c6a4b}.saved-character{padding:20px;margin:20px 0;border:1px solid rgba(202,160,105,.25);background:rgba(255,255,255,.03)}.saved-character h2{margin:0}.saved-character p{color:#bf9d72}.empty-character{opacity:.7;margin:30px 0}.creation-name{min-width:220px}.creation-name label{display:block;font-size:11px;letter-spacing:.14em;color:#bf9d72;margin-bottom:6px}.creation-name input{width:100%;box-sizing:border-box;padding:12px;background:#160d0b;border:1px solid rgba(234,217,196,.22);color:#ead9c4;font:inherit}.character-preview{width:30%;aspect-ratio:1;z-index:2;border-radius:50%;display:grid;place-items:center;font-size:clamp(80px,12vw,160px);background:#FF6B35;border:2px solid #CC4400;box-shadow:0 0 55px rgba(190,100,60,.25);color:#fff;font-family:monospace;font-weight:bold}
+@media(max-width:850px){.creation-name{margin-top:16px;width:100%}}
+
+/* Надёжные размеры оболочки: меню больше не получает нулевую высоту. */
+#game-root,.game-shell{width:100%;min-height:540px;height:clamp(540px,75vh,900px);position:relative;overflow:hidden;}
+#game-root .game-loading{position:absolute;inset:0;display:grid;place-content:center;gap:14px;text-align:center;color:#ead9c4;font:16px Georgia,serif;background:#100a09;z-index:4000}
+#game-root .game-loading .spinner{width:34px;height:34px;border:3px solid rgba(202,160,105,.2);border-top-color:#caa069;border-radius:50%;margin:auto;animation:spin 1s linear infinite}
+#game-root .game-error{position:absolute;inset:0;z-index:5000;display:grid;place-content:center;gap:14px;padding:30px;text-align:center;color:#ead9c4;background:#100a09;font-family:Georgia,serif}
+#game-root .game-error small{max-width:620px;color:#bf9d72;word-break:break-word}#game-root .game-error button{padding:12px 28px;background:#24130f;color:#ead9c4;border:1px solid #caa069;cursor:pointer}
+@media(max-width:700px){#game-root,.game-shell{min-height:600px;height:calc(100vh - 90px)}}
+
+/* Interaction hardening: game UI must receive mouse/touch input even inside the site page. */
+#game-root, .game-shell { isolation:isolate; }
+#game-root .main-menu-screen, #game-root .character-select-screen, #game-root .character-creation-screen { pointer-events:auto !important; touch-action:manipulation; }
+#game-root .main-menu-screen *, #game-root .character-select-screen *, #game-root .character-creation-screen * { pointer-events:auto; }
+#game-root button { position:relative; z-index:1; touch-action:manipulation; -webkit-tap-highlight-color:rgba(202,160,105,.25); }
+#game-root .menu-modal[hidden] { display:none !important; pointer-events:none !important; }
+#game-root .menu-modal:not([hidden]) { z-index:50; pointer-events:auto !important; }
+
+/* === Исправленная компоновка игры: всё измеряется от фактического контейнера сайта === */
+#game-root.game-shell{width:100%;height:100%;min-height:0;position:relative;overflow:hidden;box-sizing:border-box}
+.game-play-container{height:min(78vh,920px);min-height:620px;box-sizing:border-box}
+#game-root .character-creation-screen{position:absolute;inset:0;box-sizing:border-box;padding:clamp(16px,2.5vw,32px);display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
+#game-root .creation-layout{min-height:0;display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr) minmax(220px,300px);gap:clamp(14px,2vw,28px);align-items:stretch}
+#game-root .creation-panel{min-height:0;overflow:auto}
+#game-root .creation-center{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:center}
+#game-root .character-core{width:min(100%,min(72vh,680px));height:min(100%,min(72vh,680px));aspect-ratio:1;margin:0;position:relative;display:grid;place-items:center}
+#game-root .polar-chart{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:100%;max-height:100%}
+#game-root .character-preview{position:relative;width:28%;height:28%;aspect-ratio:1;border-radius:50%;z-index:2;display:grid;place-items:center;pointer-events:none}
+#game-root .ability-panel{display:flex;flex-direction:column}
+#game-root .ability-scroll{flex:1;min-height:0;max-height:none}
+#game-root .start-game{margin-top:12px;width:100%;text-align:center}
+#game-root .totem-list{display:grid;gap:8px;margin-top:10px}
+#game-root .totem-card{opacity:.72}
+#game-root .totem-card.active{opacity:1;border-color:#caa069}
+#game-root .totem-card:disabled{opacity:.35;cursor:not-allowed}
+#game-root .select-card.wide{width:min(780px,94vw)}
+#game-root .character-carousel{display:grid;grid-template-columns:56px minmax(0,1fr) 56px;align-items:center;gap:8px;min-height:240px}
+#game-root .film-track{position:relative;height:230px;overflow:hidden;display:grid;place-items:center}
+#game-root .film-character{position:absolute;left:50%;top:50%;width:145px;height:185px;transform:translate(-50%,-50%) translateX(calc(var(--offset)*150px)) scale(calc(1 - min(0.38, abs(var(--offset))*0.18)));opacity:calc(1 - min(0.78, abs(var(--offset))*0.35));transition:transform .45s ease,opacity .45s ease,filter .45s ease;filter:grayscale(1) brightness(.65);background:#25130f;color:#ead9c4;border:1px solid rgba(202,160,105,.25);cursor:pointer;display:grid;place-items:center;z-index:1}
+#game-root .film-character.active{filter:none;opacity:1;z-index:5;border-color:#caa069}
+#game-root .film-character span{font-size:88px}
+#game-root .film-character small{position:absolute;bottom:14px;left:8px;right:8px}
+#game-root .carousel-arrow{height:56px;border-radius:50%;border:1px solid #8c6a4b;background:#160e0c;color:#ead9c4;font-size:42px;line-height:1;cursor:pointer}
+#game-root .carousel-info h2{margin:0}
+#game-root .select-actions{display:grid;gap:8px}
+@media(max-width:900px){.game-play-container{height:auto;min-height:760px}#game-root.game-shell{min-height:720px;height:auto}.creation-layout{grid-template-columns:1fr!important;overflow:auto}.character-core{width:min(90vw,560px)!important;height:min(90vw,560px)!important}.creation-panel{overflow:visible!important}.character-creation-screen{overflow:auto!important}}
+
+/* Телепортация по координатам */
+#game-root .teleport-dialog{position:absolute;inset:0;z-index:5000;display:grid;place-items:center;background:rgba(0,0,0,.68);font-family:Georgia,serif;color:#ead9c4}
+#game-root .teleport-card{width:min(430px,90vw);box-sizing:border-box;padding:28px;background:#160e0c;border:1px solid #8c6a4b;box-shadow:0 24px 80px #000;text-align:center}
+#game-root .teleport-card h2{margin:0 0 10px}.teleport-card p{opacity:.7}.teleport-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.teleport-fields input{min-width:0;padding:13px;background:#090606;border:1px solid #73523b;color:#ead9c4;font:inherit}.teleport-actions{display:flex;gap:10px;justify-content:center}.teleport-actions button{padding:11px 18px;background:#24130f;border:1px solid #8c6a4b;color:#ead9c4;font:inherit;cursor:pointer}.teleport-actions [data-go]{border-color:#caa069}.teleport-status{min-height:20px;margin-top:12px;color:#e29b79;font-size:13px}
+
+#game-root .game-loading-world{align-content:center}#game-root .game-loading-world small{opacity:.68;font-size:12px}.game-loading-progress{width:min(280px,70vw);height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}.game-loading-progress i{display:block;width:0;height:100%;background:#caa069;border-radius:inherit;transition:width .16s ease}
